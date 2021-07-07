@@ -1,0 +1,13 @@
+<div>
+  <mat-toolbar class="a-container">
+    <span>Bukmacher</span>
+  </mat-toolbar>
+  <mat-drawer-container class="b-container" >
+    <mat-drawer mode="side" disableClose="true" position="end" opened class="c-container">
+      <app-drawer></app-drawer>
+    </mat-drawer>
+    <mat-drawer-content class="d-container">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

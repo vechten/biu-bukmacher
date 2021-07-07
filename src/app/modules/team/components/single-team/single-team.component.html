@@ -1,0 +1,34 @@
+<div *ngIf="team">
+  <mat-card class="content">
+    <div class="logo-content">
+      <team-logo [logoUrl]="team.logoUrl" class="logo-wrapper"></team-logo>
+      <div class="logo-buttons">
+        <button mat-stroked-button class="logo-change-button" (click)="changeLogo()">
+          Zmień logo
+        </button>
+        <button
+          mat-stroked-button
+          class="logo-remove-button"
+          color="warn"
+          (click)="removeLogo()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div>
+      <label>Nazwa zespołu</label>
+      <h1>{{ team.name }}</h1>
+    </div>
+    <div class="edit-buttons">
+      <button mat-stroked-button color="warn" (click)="removeTeam()">Usuń</button>
+      <button mat-stroked-button color="primary" (click)="editTeam()">Edytuj</button>
+    </div>
+  </mat-card>
+  <div class="table-content">
+    <single-team-bets [model]="team.id"></single-team-bets>
+  </div>
+</div>
+<div *ngIf="!team">
+  <h1>Nie można było znaleźć zespołu</h1>
+</div>

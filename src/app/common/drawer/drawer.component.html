@@ -1,0 +1,18 @@
+<mat-divider></mat-divider>
+<div class="menu">
+  <a routerLink="/" routerLinkActive="active"
+  >
+    <button mat-button [color]="activeUrl === '/' ? 'primary' : 'accent'">
+      <span>Zakłady</span>
+    </button>
+  </a
+  >
+  <a routerLink="/teams" routerLinkActive="active"
+  >
+    <button mat-button [color]="activeUrl.includes('teams') ? 'primary' : 'accent'">
+      <span>Zespoły</span>
+    </button>
+  </a
+  >
+</div>
+

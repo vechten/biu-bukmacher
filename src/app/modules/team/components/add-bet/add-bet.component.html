@@ -1,0 +1,67 @@
+<div class="top-header">
+  <h1>Dodaj nowy zakład</h1>
+</div>
+
+<mat-divider></mat-divider>
+
+<form [formGroup]="betForm">
+  <div class="content">
+    <div class="part teams">
+      <div class="single-team">
+        <team-logo [logoUrl]="firstTeamSelected?.logoUrl" class="logo-wrapper"></team-logo>
+        <mat-form-field appearance="fill" class="selector">
+          <mat-label>Pierwszy zespół</mat-label>
+          <mat-select formControlName="firstTeamId">
+            <mat-option
+              *ngFor="let team of teamsToSelect"
+              [value]="team.id"
+              [disabled]="team.id === secondTeamSelected?.id"
+            >
+              {{ team.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <h1 class="teams-vs-title">VS</h1>
+
+      <div class="single-team">
+        <team-logo [logoUrl]="secondTeamSelected?.logoUrl" class="logo-wrapper"></team-logo>
+        <mat-form-field appearance="fill" class="selector">
+          <mat-label>Drugi zespół</mat-label>
+          <mat-select formControlName="secondTeamId">
+            <mat-option
+              *ngFor="let team of teamsToSelect"
+              [value]="team.id"
+              [disabled]="team.id === firstTeamSelected?.id"
+            >
+              {{ team.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="part bet">
+      <h2>Ustawienia zakładu</h2>
+      <div class="bet-wrapper">
+        <mat-form-field appearance="fill" class="selector">
+          <mat-label>Zespół #1 zwycięża</mat-label>
+          <input matInput formControlName="firstTeamWon"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="selector">
+          <mat-label>Remis</mat-label>
+          <input matInput formControlName="draw"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="selector">
+          <mat-label>Zespół #2 zwycięża</mat-label>
+          <input matInput formControlName="secondTeamWon"/>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="part save">
+      <button mat-stroked-button color="primary" (click)="save()">
+        <span>Dodaj</span>
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+<div *ngIf="model">
+  <a [routerLink]="['/teams', model.id]">
+    <mat-card class="content" matRipple>
+      <team-logo [logoUrl]="model.logoUrl" class="logo-wrapper"></team-logo>
+      <div>
+        <h1>{{ model.name }}</h1>
+      </div>
+    </mat-card>
+  </a>
+</div>

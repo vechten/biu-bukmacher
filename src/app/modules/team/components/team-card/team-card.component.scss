@@ -1,0 +1,23 @@
+.logo-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-right: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &:hover {
+        background: rgb(71, 71, 71);
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,9 @@
+<div *ngIf="logoUrl; then logoBlock; else noLogoBlock"></div>
+<ng-template #logoBlock>
+  <img src="{{logoUrl}}" alt="logo" class="logo"/>
+</ng-template>
+<ng-template #noLogoBlock>
+  <div class="logo no-logo">
+    <mat-icon>help_outline</mat-icon>
+  </div>
+</ng-template>

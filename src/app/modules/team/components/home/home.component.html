@@ -1,0 +1,12 @@
+<div class="top-header">
+  <h1>Najnowsze zakłady bukmacherskie</h1>
+
+
+</div>
+
+<mat-divider></mat-divider>
+<div class="matches-content">
+  <div *ngFor="let latestBet of latestBets">
+    <home-match-card [model]="latestBet"></home-match-card>
+  </div>
+</div>

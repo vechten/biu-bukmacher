@@ -1,0 +1,26 @@
+<div *ngIf="model">
+  <mat-card class="content">
+    <div class="text-content">
+      <div>
+        <h2 class="teams">
+          Mecz <span class="team-name">{{ model.firstTeam.name }}</span> vs
+          <span class="team-name">{{ model.secondTeam.name }}</span>
+        </h2>
+      </div>
+      <div class="bet-detail">
+        <div class="single-bet">
+          <small class="single-bet-name">{{ model.firstTeam.name }}</small>
+          <div class="bet-chip">{{ model.betDetails.firstTeamWon }}</div>
+        </div>
+        <div class="single-bet">
+          <small class="single-bet-name">Remis</small>
+          <div class="bet-chip">{{ model.betDetails.draw }}</div>
+        </div>
+        <div class="single-bet">
+          <small class="single-bet-name">{{ model.secondTeam.name }}</small>
+          <div class="bet-chip">{{ model.betDetails.secondTeamWon }}</div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

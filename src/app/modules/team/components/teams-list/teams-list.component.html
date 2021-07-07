@@ -1,0 +1,15 @@
+<div class="top-header">
+    <h1>Zespoły</h1>
+
+
+</div>
+<mat-divider></mat-divider>
+
+<div class="teams-content">
+    <div *ngFor="let team of teams" class="team-card-content">
+        <team-card [model]="team"></team-card>
+    </div>
+</div>
+<button mat-stroked-button color="primary" (click)="addTeam()">
+  <mat-icon>add</mat-icon><span>Nowy zespół</span>
+</button>
