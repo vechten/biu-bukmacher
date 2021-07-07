@@ -56,8 +56,7 @@ export class SingleTeamComponent implements OnInit {
   removeTeam(): void {
     const ref = this._dialog.open(ConfirmModalComponent, {
       width: "500px",
-      data: {title: "Usuń drużyne", subtitle: "Czy na pewno chcesz usunąć drużynę"},
-      autoFocus: false,
+      data: {title: "Usuń drużyne", subtitle: "Czy jesteś pewien?"},
     })
     ref.afterClosed().subscribe((response) => {
       if (response && this.team) {
